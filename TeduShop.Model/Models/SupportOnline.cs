@@ -34,6 +34,6 @@ namespace Model.Models
 
         public bool Status { set; get; }
 
-        public int? DisplayOrder { set; get; }
+        
     }
 }
