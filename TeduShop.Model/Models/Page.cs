@@ -20,6 +20,6 @@ namespace Model.Models
         [Required]
         public string Alias { set; get; }
 
-        public string Content { set; get; }
+        
     }
 }

@@ -56,37 +56,9 @@
     <Compile Include="Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Infrastructure\RepositoryBase.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
-    <Compile Include="Migrations\201605041425474_InitialDB.cs" />
-    <Compile Include="Migrations\201605041425474_InitialDB.Designer.cs">
-      <DependentUpon>201605041425474_InitialDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910261219599_DeleteDisplayMenu.cs" />
-    <Compile Include="Migrations\201910261219599_DeleteDisplayMenu.Designer.cs">
-      <DependentUpon>201910261219599_DeleteDisplayMenu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910270732330_AddDisplay.cs" />
-    <Compile Include="Migrations\201910270732330_AddDisplay.Designer.cs">
-      <DependentUpon>201910270732330_AddDisplay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910270735522_DeleteDisplay.cs" />
-    <Compile Include="Migrations\201910270735522_DeleteDisplay.Designer.cs">
-      <DependentUpon>201910270735522_DeleteDisplay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910270737282_AddDplay.cs" />
-    <Compile Include="Migrations\201910270737282_AddDplay.Designer.cs">
-      <DependentUpon>201910270737282_AddDplay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910270744232_DLDisplay.cs" />
-    <Compile Include="Migrations\201910270744232_DLDisplay.Designer.cs">
-      <DependentUpon>201910270744232_DLDisplay.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910270745259_addDplayor.cs" />
-    <Compile Include="Migrations\201910270745259_addDplayor.Designer.cs">
-      <DependentUpon>201910270745259_addDplayor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910270811425_NewPro.cs" />
-    <Compile Include="Migrations\201910270811425_NewPro.Designer.cs">
-      <DependentUpon>201910270811425_NewPro.cs</DependentUpon>
+    <Compile Include="Migrations\201910300150490_InitialDB.cs" />
+    <Compile Include="Migrations\201910300150490_InitialDB.Designer.cs">
+      <DependentUpon>201910300150490_InitialDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -124,29 +96,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201605041425474_InitialDB.resx">
-      <DependentUpon>201605041425474_InitialDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910261219599_DeleteDisplayMenu.resx">
-      <DependentUpon>201910261219599_DeleteDisplayMenu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910270732330_AddDisplay.resx">
-      <DependentUpon>201910270732330_AddDisplay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910270735522_DeleteDisplay.resx">
-      <DependentUpon>201910270735522_DeleteDisplay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910270737282_AddDplay.resx">
-      <DependentUpon>201910270737282_AddDplay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910270744232_DLDisplay.resx">
-      <DependentUpon>201910270744232_DLDisplay.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910270745259_addDplayor.resx">
-      <DependentUpon>201910270745259_addDplayor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910270811425_NewPro.resx">
-      <DependentUpon>201910270811425_NewPro.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910300150490_InitialDB.resx">
+      <DependentUpon>201910300150490_InitialDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

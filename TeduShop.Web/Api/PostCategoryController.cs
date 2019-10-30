@@ -4,10 +4,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using Web.Infrastructure.Core;
 
-namespace TeduShop.Web.Api
+namespace Web.Api
 {
-    public class PostCategoryController : ApiController
+    public class PostCategoryController : ApiControllerBase
     {
         // GET api/<controller>
         public IEnumerable<string> Get()

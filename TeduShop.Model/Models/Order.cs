@@ -38,7 +38,7 @@ namespace Model.Models
         public DateTime? CreatedDate { set; get; }
         public string CreatedBy { set; get; }
         public string PaymentStatus { set; get; }
-        public bool Status { set; get; }
+        
 
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }
