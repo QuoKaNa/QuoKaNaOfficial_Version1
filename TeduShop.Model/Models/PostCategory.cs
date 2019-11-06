@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Model.Abstract;
@@ -33,5 +34,10 @@ namespace Model.Models
         public bool? HomeFlag { set; get; }
 
         public virtual IEnumerable<Post> Posts { set; get; }
+
+        public PostCategory UpdatePostCategory(object postCategoryVm)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

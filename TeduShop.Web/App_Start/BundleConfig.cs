@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace TeduShop.Web
+namespace Web
 {
     public class BundleConfig
     {

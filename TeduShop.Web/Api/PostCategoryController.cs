@@ -1,40 +1,101 @@
-﻿using System;
+﻿using AutoMapper;
+using Model.Models;
+using Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Web.Infrastructure.Core;
+using Web.Infrastructure.Extentions;
+using Web.Models;
 
 namespace Web.Api
 {
+    [RoutePrefix("api/postcategory")]
     public class PostCategoryController : ApiControllerBase
     {
-        // GET api/<controller>
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
+        IPostCategoryService _postCategoryService;
+        
 
-        // GET api/<controller>/5
-        public string Get(int id)
+        public PostCategoryController(IErrorService errorService,IPostCategoryService postCategoryService):base(errorService)
         {
-            return "value";
+            this._postCategoryService = postCategoryService;
         }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
+        [Route("getall")]
+        public HttpResponseMessage Get(HttpRequestMessage request)
         {
+            return CreateHttpResponse(request, () =>
+            {
+                var lisCategory = _postCategoryService.GetAll();
+                var listPostCategoryVm = Mapper.Map<List<PostCategoryViewModel>>(lisCategory);
+                HttpResponseMessage response = request.CreateResponse(HttpStatusCode.OK, listPostCategoryVm);
+                return response;
+            });
         }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
+        [Route("add")]
+        public HttpResponseMessage Post(HttpRequestMessage request,PostCategoryViewModel postCategoryVm)
         {
+            return CreateHttpResponse(request, () =>
+             {
+                 HttpResponseMessage response = null;
+                 if (ModelState.IsValid)
+                 {
+                     request.CreateErrorResponse(HttpStatusCode.BadGateway, ModelState);
+                 }
+                 else
+                 {
+                     PostCategory newPostCategory = new PostCategory();
+                     newPostCategory.UpdatePostCategory(postCategoryVm);
+                     var category =_postCategoryService.Add(newPostCategory);
+                     _postCategoryService.Save();
+
+                     response = request.CreateResponse(HttpStatusCode.Created, category);
+                 }
+                 return response;
+             });
         }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
+        [Route("update")]
+        public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryVm)
         {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (ModelState.IsValid)
+                {
+                    request.CreateErrorResponse(HttpStatusCode.BadGateway, ModelState);
+                }
+                else
+                {
+                    var postCategoryDb = _postCategoryService.GetById(postCategoryVm.ID);
+                    postCategoryDb.UpdatePostCategory(postCategoryVm);
+                    _postCategoryService.Update(postCategoryDb);
+                    _postCategoryService.Save();
+
+                    response = request.CreateResponse(HttpStatusCode.OK);
+                }
+                return response;
+            });
+        }
+        public HttpResponseMessage Delete(HttpRequestMessage request, int id)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+                HttpResponseMessage response = null;
+                if (ModelState.IsValid)
+                {
+                    request.CreateErrorResponse(HttpStatusCode.BadGateway, ModelState);
+                }
+                else
+                {
+                    _postCategoryService.Delete(id);
+                    _postCategoryService.Save();
+
+                    response = request.CreateResponse(HttpStatusCode.OK);
+                }
+                return response;
+            });
         }
     }
 }

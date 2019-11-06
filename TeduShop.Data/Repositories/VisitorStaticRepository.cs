@@ -14,7 +14,7 @@ namespace Data.Repositories
     }
     public class VisitorStaticRepository:RepositoryBase<VisitorStatistic>,IVisitorStaticRepository
     {
-        public VisitorStaticRepository(DbFactory dbFactory):base(dbFactory)
+        public VisitorStaticRepository(IDbFactory dbFactory):base(dbFactory)
         {
 
         }

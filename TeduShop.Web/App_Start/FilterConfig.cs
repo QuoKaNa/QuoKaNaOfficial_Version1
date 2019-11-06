@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace TeduShop.Web
+namespace Web
 {
     public class FilterConfig
     {

@@ -39,7 +39,7 @@ namespace Model.Models
         public string CreatedBy { set; get; }
         public string PaymentStatus { set; get; }
         
-
+        public bool Status { get; set; }
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
     }
 }
