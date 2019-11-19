@@ -15,6 +15,7 @@ using Web.Models;
 namespace Web.Api
 {
     [RoutePrefix("api/productcategory")]
+    [Authorize]
     public class ProductCategoryController : ApiControllerBase
     {
         #region Initialize
@@ -142,6 +143,7 @@ namespace Web.Api
                 return response;
             });
         }
+
         [Route("delete")]
         [HttpDelete]
         [AllowAnonymous]
