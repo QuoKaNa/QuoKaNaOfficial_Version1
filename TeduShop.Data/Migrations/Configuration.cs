@@ -20,15 +20,20 @@
         protected override void Seed(Data.ShopDbContext context)
         {
             CreateProductCategorySample(context);
+            CreateSlide(context);
             //  This method will be called after migrating to the latest version.
-            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ShopDbContext()));
+            
+        }
+        private void CreateUser(ShopDbContext context)
+        {
+            //var manager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new TeduShopDbContext()));
 
-            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new ShopDbContext()));
+            //var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>(new TeduShopDbContext()));
 
             //var user = new ApplicationUser()
             //{
-            //    UserName = "quocit",
-            //    Email = "quocitspkt@gmail.com",
+            //    UserName = "tedu",
+            //    Email = "tedu.international@gmail.com",
             //    EmailConfirmed = true,
             //    BirthDay = DateTime.Now,
             //    FullName = "Technology Education"
@@ -43,17 +48,9 @@
             //    roleManager.Create(new IdentityRole { Name = "User" });
             //}
 
-            //var adminUser = manager.FindByEmail("quocitspkt@gmail.com");
+            //var adminUser = manager.FindByEmail("tedu.international@gmail.com");
 
             //manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
         }
         private void CreateProductCategorySample(Data.ShopDbContext context)
         {
@@ -76,6 +73,40 @@
             if (context.Footers.Count(x => x.ID == CommonConstants.DefaultFooterId) == 0)
             {
                 string content = "";
+            }
+        }
+        private void CreateSlide(ShopDbContext context)
+        {
+            if (context.Slides.Count() == 0)
+            {
+                List<Slide> listSlide = new List<Slide>()
+                {
+                    new Slide() {
+                        Name ="Slide 1",
+                        DisplayOrder =1,
+                        Status =true,
+                        Url ="#",
+                        Image ="/Assets/client/images/bag.jpg",
+                        Content =@"	<h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+                                <p>Lorem ipsum dolor sit amet, consectetur 
+                            adipisicing elit, sed do eiusmod tempor incididunt ut labore et </ p >
+                        <span class=""on-get"">GET NOW</span>" },
+                    new Slide() {
+                        Name ="Slide 2",
+                        DisplayOrder =2,
+                        Status =true,
+                        Url ="#",
+                        Image ="/Assets/client/images/bag1.jpg",
+                    Content=@"<h2>FLAT 50% 0FF</h2>
+                                <label>FOR ALL PURCHASE <b>VALUE</b></label>
+
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et </ p >
+
+                                <span class=""on-get"">GET NOW</span>"},
+                };
+                context.Slides.AddRange(listSlide);
+                context.SaveChanges();
             }
         }
     }
