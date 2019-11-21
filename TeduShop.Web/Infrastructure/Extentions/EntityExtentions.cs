@@ -7,7 +7,7 @@ using Web.Models;
 
 namespace Web.Infrastructure.Extentions
 {
-    public static class EntityExtentions
+    public static class EntityExtensions
     {
         public static void UpdatePostCategory(this PostCategory postCategory, PostCategoryViewModel postCategoryVm)
         {
@@ -84,6 +84,7 @@ namespace Web.Infrastructure.Extentions
             product.PromotionPrice = productVm.PromotionPrice;
             product.Warranty = productVm.Warranty;
             product.HomeFlag = productVm.HomeFlag;
+            product.HotFlag = productVm.HotFlag;
             product.ViewCount = productVm.ViewCount;
 
             product.CreatedDate = productVm.CreatedDate;
