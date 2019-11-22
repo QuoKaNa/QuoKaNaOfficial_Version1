@@ -36,17 +36,18 @@ namespace Data
         public DbSet<Tag> Tags { set; get; }
 
         public DbSet<VisitorStatistic> VisitorStatistics { set; get; }
-
         public DbSet<Error> Errors { set; get; }
+        public DbSet<ContactDetail> ContactDetails { set; get; }
+
         public static ShopDbContext Create()
         {
             return new ShopDbContext();
         }
+
         protected override void OnModelCreating(DbModelBuilder builder)
         {
-            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId,i.RoleId });
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
             builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
-           
         }
     }
 }
