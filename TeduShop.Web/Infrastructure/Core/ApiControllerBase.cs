@@ -30,14 +30,14 @@ namespace Web.Infrastructure.Core
             {
                 foreach (var eve in ex.EntityValidationErrors)
                 {
-                    Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation errors.");
+                    Trace.WriteLine($"Entity of type \"{eve.Entry.Entity.GetType().Name}\" in state \"{eve.Entry.State}\" has the following validation error.");
                     foreach (var ve in eve.ValidationErrors)
                     {
-                        Trace.WriteLine($". Propert: \"{ve.PropertyName}\",Error: \"{ve.ErrorMessage}\"");
+                        Trace.WriteLine($"- Property: \"{ve.PropertyName}\", Error: \"{ve.ErrorMessage}\"");
                     }
-                    LogError(ex);
-                    response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.InnerException.Message);
                 }
+                LogError(ex);
+                response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.InnerException.Message);
             }
             catch (DbUpdateException dbEx)
             {
@@ -47,7 +47,7 @@ namespace Web.Infrastructure.Core
             catch (Exception ex)
             {
                 LogError(ex);
-                response = requestMessage.CreateErrorResponse(HttpStatusCode.BadRequest, ex.Message);
+                response = requestMessage.CreateResponse(HttpStatusCode.BadRequest, ex.Message);
             }
             return response;
         }
