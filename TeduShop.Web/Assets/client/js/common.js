@@ -27,9 +27,14 @@
             }
         }).autocomplete("instance")._renderItem = function (ul, item) {
             return $("<li>")
-                .append("<a>" + item.label + "</a>")
-                .appendTo(ul);
+              .append("<a>" + item.label + "</a>")
+              .appendTo(ul);
         };
+
+        $('#btnLogout').off('click').on('click', function (e) {
+            e.preventDefault();
+            $('#frmLogout').submit();
+        });
     }
 }
 common.init();
