@@ -5,6 +5,7 @@ using System.Web;
 
 namespace Web.Models
 {
+    [Serializable]
     public class ProductViewModel
     {
         public int ID { set; get; }
