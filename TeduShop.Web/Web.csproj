@@ -6154,7 +6154,7 @@
     <Content Include="Assets\client\js\jquery.flexisel.js" />
     <Content Include="Assets\client\js\jquery.min.js" />
     <Content Include="Assets\client\js\jquery.wmuSlider.js" />
-    <Content Include="Assets\client\template\contact_tamplate.html" />
+    <Content Include="Assets\client\template\contact_template.html" />
     <Content Include="bower_components\angular-ui-router\karma.conf.js" />
     <Content Include="bower_components\angular-ui-router\release\angular-ui-router.js" />
     <Content Include="bower_components\angular-ui-router\release\angular-ui-router.min.js" />
