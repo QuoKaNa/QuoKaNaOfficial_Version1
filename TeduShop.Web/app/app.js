@@ -4,7 +4,10 @@
 (function () {
     angular.module('shop',
         ['shop.products',
+            'shop.application_groups',
             'shop.product_categories',
+            'shop.application_roles',
+            'shop.application_users',
             'shop.common'])
         .config(config)
         .config(configAuthentication);

@@ -50,6 +50,7 @@ namespace Web.Api
                 _userManager = value;
             }
         }
+
         [HttpPost]
         [AllowAnonymous]
         [Route("login")]
@@ -64,6 +65,7 @@ namespace Web.Api
             var result = await SignInManager.PasswordSignInAsync(userName, password, rememberMe, shouldLockout: false);
             return request.CreateResponse(HttpStatusCode.OK, result);
         }
+
 
     }
 }

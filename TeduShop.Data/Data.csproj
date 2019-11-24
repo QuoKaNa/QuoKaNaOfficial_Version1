@@ -127,8 +127,20 @@
     <Compile Include="Migrations\201911231102390_AddCustomerID.designer.cs">
       <DependentUpon>201911231102390_AddCustomerID.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911231205562_RenamIdentity.cs" />
+    <Compile Include="Migrations\201911231205562_RenamIdentity.designer.cs">
+      <DependentUpon>201911231205562_RenamIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911231218268_AddGroupUser.cs" />
+    <Compile Include="Migrations\201911231218268_AddGroupUser.designer.cs">
+      <DependentUpon>201911231218268_AddGroupUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\ApplicationGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleGroupRepository.cs" />
+    <Compile Include="Repositories\ApplicationRoleRepository.cs" />
+    <Compile Include="Repositories\ApplicationUserGroupRepository.cs" />
     <Compile Include="Repositories\ContactDetailRepository.cs" />
     <Compile Include="Repositories\ErrorRepository.cs" />
     <Compile Include="Repositories\FeedbackRepository.cs" />
@@ -213,6 +225,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911231102390_AddCustomerID.resx">
       <DependentUpon>201911231102390_AddCustomerID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911231205562_RenamIdentity.resx">
+      <DependentUpon>201911231205562_RenamIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911231218268_AddGroupUser.resx">
+      <DependentUpon>201911231218268_AddGroupUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
