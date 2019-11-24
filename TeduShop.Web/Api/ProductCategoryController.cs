@@ -143,6 +143,7 @@ namespace Web.Api
                 return response;
             });
         }
+
         [Route("delete")]
         [HttpDelete]
         [AllowAnonymous]

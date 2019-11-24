@@ -1,5 +1,4 @@
-﻿/// <reference path="../assets/admin/libs/angular/angular.js" />
-
+﻿/// <reference path="/Assets/admin/libs/angular/angular.js" />
 
 (function () {
     angular.module('shop',
@@ -8,6 +7,7 @@
             'shop.product_categories',
             'shop.application_roles',
             'shop.application_users',
+            'shop.statistics',
             'shop.common'])
         .config(config)
         .config(configAuthentication);
