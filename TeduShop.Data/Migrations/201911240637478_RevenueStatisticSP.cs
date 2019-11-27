@@ -27,6 +27,7 @@
                 where o.CreatedDate <= cast(@toDate as date) and o.CreatedDate >= cast(@fromDate as date)
                 group by o.CreatedDate"
                 );
+            
         }
 
         public override void Down()
