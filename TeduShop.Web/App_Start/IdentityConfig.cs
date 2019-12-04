@@ -14,9 +14,9 @@ using System.Web;
 
 namespace Web.App_Start
 {
-    public class ApplicationUserStore:UserStore<ApplicationUser>
+    public class ApplicationUserStore : UserStore<ApplicationUser>
     {
-        public ApplicationUserStore(ShopDbContext context):base(context)
+        public ApplicationUserStore(ShopDbContext context) : base(context)
         {
 
         }
@@ -54,7 +54,7 @@ namespace Web.App_Start
             manager.DefaultAccountLockoutTimeSpan = TimeSpan.FromMinutes(5);
             manager.MaxFailedAccessAttemptsBeforeLockout = 5;
 
-           
+
             var dataProtectionProvider = options.DataProtectionProvider;
             if (dataProtectionProvider != null)
             {

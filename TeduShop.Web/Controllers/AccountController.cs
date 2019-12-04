@@ -133,8 +133,8 @@ namespace Web.Controllers
 
 
                 var adminUser = await _userManager.FindByEmailAsync(model.Email);
-                if (adminUser != null)
-                    await _userManager.AddToRolesAsync(adminUser.Id, new string[] { "User" });
+               //if (adminUser != null)
+               //     await _userManager.AddToRolesAsync(adminUser.Id, new string[] { "User" });
 
                 string content = System.IO.File.ReadAllText(Server.MapPath("/Assets/client/template/newuser.html"));
                 content = content.Replace("{{UserName}}", adminUser.FullName);
