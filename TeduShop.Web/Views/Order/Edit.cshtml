@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+
+@model Web.Models.OrderViewModel
+<h2>Edit</h2>
+<div align="center" width="500px">
+    @using (Html.BeginForm("Edit", "Order", FormMethod.Post))
+    {
+        <table class="table" width="400px" cellpadding="20">
+            @*<tr class="btn-default">
+                    <td> @Html.LabelFor(model => model.Order.ID) </td>
+                    <td> @Html.TextBoxFor(model => model.Order.ID) </td>
+                </tr>*@
+            <tr>
+                <td> @Html.LabelFor(model => model.Order.CustomerName) </td>
+                <td> @Html.TextBoxFor(model => model.Order.CustomerName) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Order.CustomerAddress) </td>
+                <td> @Html.TextBoxFor(model => model.Order.CustomerAddress) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Order.CustomerEmail) </td>
+                <td> @Html.TextBoxFor(model => model.Order.CustomerEmail) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Order.CustomerMobile) </td>
+                <td> @Html.TextBoxFor(model => model.Order.CustomerMobile) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Order.CustomerMessage) </td>
+                <td> @Html.TextBoxFor(model => model.Order.CustomerMessage) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Order.PaymentMethod) </td>
+                <td> @Html.TextBoxFor(model => model.Order.PaymentMethod) </td>
+            </tr>
+            @*<tr>
+                    <td> @Html.LabelFor(model => model.Order.PaymentStatus) </td>
+                    <td> @Html.TextBoxFor(model => model.Order.PaymentStatus) </td>
+                </tr>*@
+            <tr>
+                <td> @Html.LabelFor(model => model.Order.CreatedDate) </td>
+                <td> @Html.TextBoxFor(model => model.Order.CreatedDate) </td>
+            </tr>
+            <tr>
+                <td> @Html.LabelFor(model => model.Order.Status) </td>
+                @*<td> @Html.TextBoxFor(model => model.Order.Status) </td>*@
+                <td> @Html.CheckBoxFor(model => model.Order.Status) </td>
+            </tr>
+            <tr>
+                <td> </td>
+                <td>
+                    <input type="submit" value="Save" />
+                    <a class="btn-primary" href="@Url.Action("Index","Order")"> Back </a>
+                    @Html.HiddenFor(model => model.Order.ID)
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+

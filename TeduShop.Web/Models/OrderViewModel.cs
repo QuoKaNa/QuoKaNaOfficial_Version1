@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,6 +9,8 @@ namespace Web.Models
 {
     public class OrderViewModel
     {
+        public Order Order { get; set; }
+
         public int ID { set; get; }
 
         [Required]

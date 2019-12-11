@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layouts.cshtml";
+}
+
+<h2>Tất cả đơn hàng</h2>
+<div align="center">
+    @*<a href="@Url.Action("Create","Order")"> Add New Order </a><br />*@
+    <table cellpadding="2" class="table" cellspacing="2" border="1">
+        <tr class="btn-primary">
+            <th> ID đơn hàng </th>
+            <th> Tên khách hàng </th>
+            <th> Địa chỉ khách hàng </th>
+            <th> Email khách hàng </th>
+            <th> Điện thoại khách hàng </th>
+            <th> Lời nhắn khách hàng </th>
+            <th> Phương thức thanh toán </th>
+            @*<th> Tổng giá </th>*@
+            <th> Ngày đặt hàng </th>
+            <th> Trạng thái </th>
+        </tr>
+        @foreach (var Cust in ViewBag.listOrders)
+        {
+            <tr class="btn-success">
+
+                <td>@Cust.ID </td>
+                <td>@Cust.CustomerName </td>
+                <td>@Cust.CustomerAddress </td>
+                <td>@Cust.CustomerEmail </td>
+                <td>@Cust.CustomerMobile</td>
+                <td>@Cust.CustomerMessage</td>
+                <td>@Cust.PaymentMethod</td>
+                @*<td>@Cust.PaymentStatus</td>*@
+                <td>@Cust.CreatedDate.ToString("dd/MM/yyyy") </td>
+                <td>
+                    @if (Cust.Status == false)
+                    {
+                        <span>Xử lý đơn hàng</span>
+                    }
+
+                    else if (Cust.Status == true)
+                    {
+                        <span>Đã giao hàng</span>
+                    }
+
+                </td>
+                <td>
+                    <a onclick="return confirm('Do you want to Delete?')" href="@Url.Action("Delete","Order",new {id  = Cust.ID}) ">Delete</a> ||<a href="@Url.Action("Edit","Order",new {id= Cust.ID}) ">Edit</a> ||
+                    @Html.ActionLink("Chi tiết", "Detail", "Order", new { id = Cust.ID }, null)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+

@@ -1,0 +1,92 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "Detail";
+                Layout = "~/Views/Shared/Layouts.cshtml";
+}
+
+@model Model.Models.Order
+<h2>Detail</h2>
+<div>
+    <h4>Đơn đặt hàng</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Tên khách hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerName)
+        </dd>
+
+        <dt>
+            Địa chỉ khách hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerAddress)
+        </dd>
+
+        <dt>
+            Email khách hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerEmail)
+        </dd>
+
+        <dt>
+            Điện thoại khách hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerMobile)
+        </dd>
+
+        <dt>
+            Lời nhắn khách hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CustomerMessage)
+        </dd>
+
+        <dt>
+            Phương thức thanh toán
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaymentMethod)
+        </dd>
+
+        @*<dt>
+                Tổng giá
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PaymentStatus)
+            </dd>*@
+
+        <dt>
+            Ngày đặt hàng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            Trạng thái
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
